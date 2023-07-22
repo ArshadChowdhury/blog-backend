@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { UsersModule } from 'src/users/users.module';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthController } from './auth.controller';
+import 'dotenv/config';
 // import { AuthGuard } from './auth.guard';
 // import { APP_GUARD } from '@nestjs/core';
 
@@ -11,7 +12,7 @@ import { AuthController } from './auth.controller';
     UsersModule,
     JwtModule.register({
       global: true,
-      secret: 'VERY_SECRET_TOKEN',
+      secret: process.env.SECRET_KEY,
       signOptions: { expiresIn: '300s' },
     }),
   ],

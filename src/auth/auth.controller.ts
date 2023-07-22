@@ -11,7 +11,7 @@ import {
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 
-@Controller('')
+@Controller()
 export class AuthController {
   constructor(private authService: AuthService) {}
 
